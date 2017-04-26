@@ -39,7 +39,7 @@ if __name__ == "__main__":
     print "--------start predict----------"
     predictY = clf.predict_proba(validX)
     print "--------predict is done--------"
-    outputFile = open("uc_u_features_4.1_4.10_predicted.csv","w")
+    outputFile = open("uc_u_features_4.1_4.10_predicted.csv", "w")
     write = csv.writer(outputFile)
     write.writerow(["user_id","sku_id"])
     for i in range(len(validX)):

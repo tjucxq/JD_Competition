@@ -3,8 +3,8 @@
 import csv
 
 if __name__ == "__main__":
-    predictFile = open("10000_4.1_4.10_predicted.csv","r") #预测文件
-    labelFile = open("4.1_4.10_label.csv","r") #标签文件
+    predictFile = open("model_result_4.9_4.13.csv","r") #预测文件
+    labelFile = open("4.9_4.13_true_label.csv","r") #标签文件
 
     predictReader = csv.reader(predictFile)
     labelReader = csv.reader(labelFile)
@@ -41,6 +41,8 @@ if __name__ == "__main__":
             trueUser += 1
             if sku in labelMap[uid]:
                 trueSku += 1
+        if predictReader.line_num == 1000:
+            break
 
     print "真集结果的个数为："+str(labelNum)+ " 预测结果的个数为："+str(predictNum)
 
